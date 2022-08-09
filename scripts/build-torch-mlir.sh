@@ -3,6 +3,12 @@
 # Builds torch-mlir following the following documentation:
 # https://github.com/llvm/torch-mlir/blob/main/development.md
 
+# Run on container/remote directly, need to check
+PROJECT="mlir-generator"
+if [ -d "$PROJECT" ]; then
+  cd "$PROJECT"
+fi
+
 ROOT="$(git rev-parse --show-toplevel)/external/torch-mlir"
 if [ ! -d "$ROOT" ]; then
     echo "Cannot find repository root"

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Generate MLIR files from Torch-MLIR
+# Run from inside the repo already, no need to check
 
 ROOT=$(git rev-parse --show-toplevel)
 if [ ! -d "$ROOT" ]; then
