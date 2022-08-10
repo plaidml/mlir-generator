@@ -9,4 +9,4 @@ REPO="https://github.com/$ORG/$PROJECT.git"
 # Clone the repo
 git clone $REPO
 cd "$PROJECT"
-git submodule update --init --recursive
+git submodule update --depth 1 --init --recursive

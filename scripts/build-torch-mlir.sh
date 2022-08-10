@@ -8,18 +8,19 @@ PROJECT="mlir-generator"
 if [ -d "$PROJECT" ]; then
   cd "$PROJECT"
 fi
+# Make sure the repo is in a good shape
+git submodule update --depth 1 --init --recursive
 
+# Go into torch-mlir subrepo
 ROOT="$(git rev-parse --show-toplevel)/external/torch-mlir"
 if [ ! -d "$ROOT" ]; then
     echo "Cannot find repository root"
     exit 1
 fi
-
-# Make sure the repo is in a good shape
-git submodule update --init --recursive
 cd "$ROOT"
 
-# Prepare the environment
+# Always grab a fresh env environment
+rm -rf mlir_venv
 python -m venv mlir_venv
 echo "export PYTHONPATH=$ROOT/build/tools/torch-mlir/python_packages/torch_mlir:$ROOT/examples" >> mlir_venv/bin/activate
 source mlir_venv/bin/activate
