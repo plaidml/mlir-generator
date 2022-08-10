@@ -16,7 +16,7 @@ if [ ! -d "$ROOT" ]; then
 fi
 
 # Make sure the repo is in a good shape
-git submodule update --recursive
+git submodule update --init --recursive
 cd "$ROOT"
 
 # Prepare the environment
@@ -29,10 +29,6 @@ export CMAKE_GENERATOR=Ninja
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python setup.py bdist_wheel
-
-
-# Checkout LLVM's source
-git submodule update --init --recursive
 
 # Build torch-mlir with LLVM in-tree
 cmake -Bbuild \
