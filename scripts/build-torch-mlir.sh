@@ -36,6 +36,8 @@ git submodule update --depth 1 --init --recursive
 echo " + Install Python dependencies"
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+# Workaround for https://github.com/llvm/torch-mlir/pull/1174
+python -m pip install pyyaml
 
 # Build torch-mlir with LLVM in-tree
 echo " + Build torch-mlir in-tree"
