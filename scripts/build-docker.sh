@@ -20,7 +20,10 @@ if [ "$CONTAINER" != "" ]; then
     exit 1
 fi
 
+echo " + Build container"
 docker build -t "$IMAGENAME" -f "$DOCKERFILE" .
+echo " + Run container"
 docker run -it -d "$IMAGENAME" bash
 CONTAINER=$(docker ps -a | grep "$IMAGENAME" | cut -d " " -f 1)
+echo " + Test container"
 docker exec -it "$CONTAINER" /bin/bash -c 'echo "Container created successfully"'
