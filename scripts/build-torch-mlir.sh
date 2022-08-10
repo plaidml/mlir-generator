@@ -25,22 +25,21 @@ echo " + Creating a fresh venv"
 rm -rf mlir_venv
 python -m venv mlir_venv
 echo "export PYTHONPATH=$ROOT/build/tools/torch-mlir/python_packages/torch_mlir:$ROOT/examples" >> mlir_venv/bin/activate
+echo "export CMAKE_GENERATOR=Ninja" >> mlir_venv/bin/activate
 source mlir_venv/bin/activate
-export CMAKE_GENERATOR=Ninja
 
 # Checkout torch-mlir repos too
 echo " + Updating submodules"
 git submodule update --depth 1 --init --recursive
 
-# Build the Python packages
-echo " + Install / build Python dependencies"
+# Install Python dependencies
+echo " + Install Python dependencies"
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-python setup.py bdist_wheel
 
 # Build torch-mlir with LLVM in-tree
 echo " + Build torch-mlir in-tree"
-cmake -Bbuild-in \
+cmake -Bbuild \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_C_COMPILER=clang \
   -DCMAKE_CXX_COMPILER=clang++ \
@@ -55,8 +54,8 @@ cmake -Bbuild-in \
   -DCMAKE_MODULE_LINKER_FLAGS_INIT="-fuse-ld=lld" \
   -DCMAKE_SHARED_LINKER_FLAGS_INIT="-fuse-ld=lld" \
   externals/llvm-project/llvm
-ninja -C build-in tools/torch-mlir/all
+ninja -C build tools/torch-mlir/all
 
 # Basic tests
 echo " + Run torch-mlir tests"
-ninja -C build-in check-torch-mlir check-torch-mlir-python
+ninja -C build check-torch-mlir check-torch-mlir-python
