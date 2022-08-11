@@ -3,7 +3,10 @@ from __future__ import print_function
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch_mlir
+
+import sys
+sys.path.append('../lib')
+from torch_mlir_compile import torch_mlir_compile
 
 class Net(nn.Module):
     def __init__(self):
@@ -22,8 +25,7 @@ class Net(nn.Module):
 def main():
     device = torch.device("cpu")
     simple = Net().to(device)
-    module = torch_mlir.compile(simple, torch.ones(2, 128), output_type='linalg_on_tensors')
-    print(module.operation.get_asm(large_elements_limit=10))
+    torch_mlir_compile(simple, torch.ones(2, 128))
 
 if __name__ == '__main__':
     main()
