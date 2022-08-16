@@ -60,6 +60,10 @@ Each script has an idea of what to do, use them wisely.
 
 Run `./scripts/build-<front-end-name>.sh` at the root of the repository.
 
+To build a debug version, pass `-d` to the script.
+
+To build a release+debug symbols version, pass `-rd` to the script.
+
 ### Adding a new front-end
 
 If you want to build an existing front-end, you need to:

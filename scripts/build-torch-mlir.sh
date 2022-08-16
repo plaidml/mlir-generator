@@ -3,6 +3,15 @@
 # Builds torch-mlir following the following documentation:
 # https://github.com/llvm/torch-mlir/blob/main/development.md
 
+BUILD_TYPE=Release
+if [ "$1" == "-d" ]; then
+  echo "Building debug version"
+  BUILD_TYPE=Debug
+elif [ "$1" == "-rd" ]; then
+  echo "Building rel+debug version"
+  BUILD_TYPE=RelWithDebInfo
+fi
+
 # Run on container/remote directly, need to check
 PROJECT="mlir-generator"
 if [ -d "$PROJECT" ]; then
@@ -40,7 +49,7 @@ python -m pip install -r requirements.txt
 # Build torch-mlir with LLVM in-tree
 echo " + Build torch-mlir in-tree"
 cmake -Bbuild \
-  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
   -DCMAKE_C_COMPILER=clang \
   -DCMAKE_CXX_COMPILER=clang++ \
   -DPython3_FIND_VIRTUALENV=ONLY \
