@@ -3,10 +3,10 @@ torch
   func.func @forward(%arg0: !torch.vtensor<[2,128],f32>) -> !torch.vtensor<[2,10],f32> {
     %float1.000000e00 = torch.constant.float 1.000000e+00
     %true = torch.constant.bool true
-    %0 = torch.vtensor.literal(dense<[-0.0332389176, -0.0606467798, -0.00846566259, 0.00292211771, -0.0320931375, 0.0611905307, 0.0548969656, -0.037005052, -0.0607765764, 0.00599184632]> : tensor<10xf32>) : !torch.vtensor<[10],f32>
-    %1 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<10x256xf32>) : !torch.vtensor<[10,256],f32>
-    %2 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %3 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128xf32>) : !torch.vtensor<[256,128],f32>
+    %0 = torch.vtensor.literal(dense<[-0.0375467315, -0.0390448719, 0.025734596, -0.0439804271, -0.0015810132, 0.0543777645, 0.0610132664, 0.0602517053, 0.0234665051, 0.0598444641]> : tensor<10xf32>) : !torch.vtensor<[10],f32>
+    %1 = torch.vtensor.literal(dense_resource<__elided__> : tensor<10x256xf32>) : !torch.vtensor<[10,256],f32>
+    %2 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %3 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256x128xf32>) : !torch.vtensor<[256,128],f32>
     %int1 = torch.constant.int 1
     %none = torch.constant.none
     %4 = torch.aten.linear %arg0, %3, %2 : !torch.vtensor<[2,128],f32>, !torch.vtensor<[256,128],f32>, !torch.vtensor<[256],f32> -> !torch.vtensor<[2,256],f32>
@@ -32,10 +32,10 @@ linalg-on-tensors
 module attributes {torch.debug_module_name = "Net"} {
   func.func @forward(%arg0: tensor<2x128xf32>) -> tensor<2x10xf32> {
     %cst = arith.constant 1.000000e+00 : f64
-    %cst_0 = arith.constant dense<[-0.0332389176, -0.0606467798, -0.00846566259, 0.00292211771, -0.0320931375, 0.0611905307, 0.0548969656, -0.037005052, -0.0607765764, 0.00599184632]> : tensor<10xf32>
-    %cst_1 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<10x256xf32>
-    %cst_2 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_3 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128xf32>
+    %cst_0 = arith.constant dense<[-0.0375467315, -0.0390448719, 0.025734596, -0.0439804271, -0.0015810132, 0.0543777645, 0.0610132664, 0.0602517053, 0.0234665051, 0.0598444641]> : tensor<10xf32>
+    %cst_1 = arith.constant dense_resource<__elided__> : tensor<10x256xf32>
+    %cst_2 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_3 = arith.constant dense_resource<__elided__> : tensor<256x128xf32>
     %cst_4 = arith.constant 0.000000e+00 : f32
     %c0_i64 = arith.constant 0 : i64
     %cst_5 = arith.constant -3.40282347E+38 : f32
@@ -123,11 +123,11 @@ module attributes {torch.debug_module_name = "Net"} {
 tosa 
  module attributes {torch.debug_module_name = "Net"} {
   func.func @forward(%arg0: tensor<2x128xf32>) -> tensor<2x10xf32> {
-    %0 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<10x256xf32>} : () -> tensor<10x256xf32>
-    %1 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128xf32>} : () -> tensor<256x128xf32>
+    %0 = "tosa.const"() {value = dense_resource<__elided__> : tensor<10x256xf32>} : () -> tensor<10x256xf32>
+    %1 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x128xf32>} : () -> tensor<256x128xf32>
     %2 = "tosa.const"() {value = dense<[1, 0]> : tensor<2xi32>} : () -> tensor<2xi32>
-    %3 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256xf32>} : () -> tensor<1x256xf32>
-    %4 = "tosa.const"() {value = dense<[[-0.0332389176, -0.0606467798, -0.00846566259, 0.00292211771, -0.0320931375, 0.0611905307, 0.0548969656, -0.037005052, -0.0607765764, 0.00599184632]]> : tensor<1x10xf32>} : () -> tensor<1x10xf32>
+    %3 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256xf32>} : () -> tensor<1x256xf32>
+    %4 = "tosa.const"() {value = dense<[[-0.0375467315, -0.0390448719, 0.025734596, -0.0439804271, -0.0015810132, 0.0543777645, 0.0610132664, 0.0602517053, 0.0234665051, 0.0598444641]]> : tensor<1x10xf32>} : () -> tensor<1x10xf32>
     %5 = "tosa.transpose"(%1, %2) : (tensor<256x128xf32>, tensor<2xi32>) -> tensor<128x256xf32>
     %6 = "tosa.reshape"(%arg0) {new_shape = [1, 2, 128]} : (tensor<2x128xf32>) -> tensor<1x2x128xf32>
     %7 = "tosa.reshape"(%5) {new_shape = [1, 128, 256]} : (tensor<128x256xf32>) -> tensor<1x128x256xf32>
@@ -160,10 +160,10 @@ mhlo
     %2 = mhlo.constant dense<0.000000e+00> : tensor<f32>
     %3 = mhlo.constant dense<0> : tensor<i64>
     %4 = mhlo.constant dense<-3.40282347E+38> : tensor<f32>
-    %5 = mhlo.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128xf32>
-    %6 = mhlo.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %7 = mhlo.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<10x256xf32>
-    %8 = mhlo.constant dense<[-0.0332389176, -0.0606467798, -0.00846566259, 0.00292211771, -0.0320931375, 0.0611905307, 0.0548969656, -0.037005052, -0.0607765764, 0.00599184632]> : tensor<10xf32>
+    %5 = mhlo.constant dense_resource<__elided__> : tensor<256x128xf32>
+    %6 = mhlo.constant dense_resource<__elided__> : tensor<256xf32>
+    %7 = mhlo.constant dense_resource<__elided__> : tensor<10x256xf32>
+    %8 = mhlo.constant dense<[-0.0375467315, -0.0390448719, 0.025734596, -0.0439804271, -0.0015810132, 0.0543777645, 0.0610132664, 0.0602517053, 0.0234665051, 0.0598444641]> : tensor<10xf32>
     %9 = "mhlo.transpose"(%5) {permutation = dense<[1, 0]> : tensor<2xi64>} : (tensor<256x128xf32>) -> tensor<128x256xf32>
     %10 = "mhlo.dot"(%arg0, %9) : (tensor<2x128xf32>, tensor<128x256xf32>) -> tensor<2x256xf32>
     %11 = "mhlo.broadcast_in_dim"(%6) {broadcast_dimensions = dense<1> : tensor<1xi64>} : (tensor<256xf32>) -> tensor<2x256xf32>
@@ -178,20 +178,20 @@ mhlo
     %20 = "mhlo.broadcast_in_dim"(%19) {broadcast_dimensions = dense<1> : tensor<1xi64>} : (tensor<10xi64>) -> tensor<2x10xi64>
     %21:2 = mhlo.reduce(%18 init: %4), (%20 init: %3) across dimensions = [1] : (tensor<2x10xf32>, tensor<2x10xi64>, tensor<f32>, tensor<i64>) -> (tensor<2xf32>, tensor<2xi64>)
      reducer(%arg1: tensor<f32>, %arg3: tensor<f32>) (%arg2: tensor<i64>, %arg4: tensor<i64>)  {
-      %31 = "mhlo.compare"(%arg1, %arg3) {compare_type = #mhlo<comparison_type FLOAT>, comparison_direction = #mhlo<comparison_direction GE>} : (tensor<f32>, tensor<f32>) -> tensor<i1>
+      %31 = mhlo.compare  GE, %arg1, %arg3,  FLOAT : (tensor<f32>, tensor<f32>) -> tensor<i1>
       %32 = "mhlo.select"(%31, %arg1, %arg3) : (tensor<i1>, tensor<f32>, tensor<f32>) -> tensor<f32>
-      %33 = "mhlo.compare"(%arg1, %arg3) {compare_type = #mhlo<comparison_type FLOAT>, comparison_direction = #mhlo<comparison_direction EQ>} : (tensor<f32>, tensor<f32>) -> tensor<i1>
+      %33 = mhlo.compare  EQ, %arg1, %arg3,  FLOAT : (tensor<f32>, tensor<f32>) -> tensor<i1>
       %34 = mhlo.minimum %arg2, %arg4 : tensor<i64>
       %35 = "mhlo.select"(%31, %arg2, %arg4) : (tensor<i1>, tensor<i64>, tensor<i64>) -> tensor<i64>
       %36 = "mhlo.select"(%33, %34, %35) : (tensor<i1>, tensor<i64>, tensor<i64>) -> tensor<i64>
-      "mhlo.return"(%32, %36) : (tensor<f32>, tensor<i64>) -> ()
+      mhlo.return %32, %36 : tensor<f32>, tensor<i64>
     }
-    %22 = "mhlo.reshape"(%21#0) : (tensor<2xf32>) -> tensor<2x1xf32>
+    %22 = mhlo.reshape %21#0 : (tensor<2xf32>) -> tensor<2x1xf32>
     %23 = "mhlo.broadcast_in_dim"(%22) {broadcast_dimensions = dense<[0, 1]> : tensor<2xi64>} : (tensor<2x1xf32>) -> tensor<2x10xf32>
     %24 = mhlo.subtract %18, %23 : tensor<2x10xf32>
     %25 = mhlo.exponential %24 : tensor<2x10xf32>
     %26 = mhlo.reduce(%25 init: %2) applies mhlo.add across dimensions = [1] : (tensor<2x10xf32>, tensor<f32>) -> tensor<2xf32>
-    %27 = "mhlo.reshape"(%26) : (tensor<2xf32>) -> tensor<2x1xf32>
+    %27 = mhlo.reshape %26 : (tensor<2xf32>) -> tensor<2x1xf32>
     %28 = mhlo.log %27 : tensor<2x1xf32>
     %29 = "mhlo.broadcast_in_dim"(%28) {broadcast_dimensions = dense<[0, 1]> : tensor<2xi64>} : (tensor<2x1xf32>) -> tensor<2x10xf32>
     %30 = mhlo.subtract %24, %29 : tensor<2x10xf32>

@@ -4,105 +4,105 @@ torch
     %int7 = torch.constant.int 7
     %true = torch.constant.bool true
     %false = torch.constant.bool false
-    %0 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1000xf32>) : !torch.vtensor<[1000],f32>
-    %1 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1000x512xf32>) : !torch.vtensor<[1000,512],f32>
-    %2 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %3 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %4 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %5 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %6 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>) : !torch.vtensor<[512,512,3,3],f32>
-    %7 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %8 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %9 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %10 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %11 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>) : !torch.vtensor<[512,512,3,3],f32>
-    %12 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %13 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %14 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %15 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x256x1x1xf32>) : !torch.vtensor<[512,256,1,1],f32>
-    %16 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %17 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %18 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %19 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %20 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>) : !torch.vtensor<[512,512,3,3],f32>
-    %21 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %22 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %23 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %24 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>) : !torch.vtensor<[512],f32>
-    %25 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x256x3x3xf32>) : !torch.vtensor<[512,256,3,3],f32>
-    %26 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %27 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %28 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %29 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %30 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>) : !torch.vtensor<[256,256,3,3],f32>
-    %31 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %32 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %33 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %34 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %35 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>) : !torch.vtensor<[256,256,3,3],f32>
-    %36 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %37 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %38 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %39 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128x1x1xf32>) : !torch.vtensor<[256,128,1,1],f32>
-    %40 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %41 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %42 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %43 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %44 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>) : !torch.vtensor<[256,256,3,3],f32>
-    %45 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %46 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %47 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %48 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>) : !torch.vtensor<[256],f32>
-    %49 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128x3x3xf32>) : !torch.vtensor<[256,128,3,3],f32>
-    %50 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %51 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %52 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %53 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %54 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>) : !torch.vtensor<[128,128,3,3],f32>
-    %55 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %56 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %57 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %58 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %59 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>) : !torch.vtensor<[128,128,3,3],f32>
-    %60 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %61 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %62 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %63 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x64x1x1xf32>) : !torch.vtensor<[128,64,1,1],f32>
-    %64 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %65 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %66 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %67 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %68 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>) : !torch.vtensor<[128,128,3,3],f32>
-    %69 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %70 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %71 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %72 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>) : !torch.vtensor<[128],f32>
-    %73 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x64x3x3xf32>) : !torch.vtensor<[128,64,3,3],f32>
-    %74 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %75 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %76 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %77 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %78 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>) : !torch.vtensor<[64,64,3,3],f32>
-    %79 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %80 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %81 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %82 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %83 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>) : !torch.vtensor<[64,64,3,3],f32>
-    %84 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %85 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %86 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %87 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %88 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>) : !torch.vtensor<[64,64,3,3],f32>
-    %89 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %90 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %91 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %92 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %93 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>) : !torch.vtensor<[64,64,3,3],f32>
-    %94 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %95 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %96 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %97 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>) : !torch.vtensor<[64],f32>
-    %98 = torch.vtensor.literal(opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x3x7x7xf32>) : !torch.vtensor<[64,3,7,7],f32>
+    %0 = torch.vtensor.literal(dense_resource<__elided__> : tensor<1000xf32>) : !torch.vtensor<[1000],f32>
+    %1 = torch.vtensor.literal(dense_resource<__elided__> : tensor<1000x512xf32>) : !torch.vtensor<[1000,512],f32>
+    %2 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %3 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %4 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %5 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %6 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512x512x3x3xf32>) : !torch.vtensor<[512,512,3,3],f32>
+    %7 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %8 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %9 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %10 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %11 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512x512x3x3xf32>) : !torch.vtensor<[512,512,3,3],f32>
+    %12 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %13 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %14 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %15 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512x256x1x1xf32>) : !torch.vtensor<[512,256,1,1],f32>
+    %16 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %17 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %18 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %19 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %20 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512x512x3x3xf32>) : !torch.vtensor<[512,512,3,3],f32>
+    %21 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %22 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %23 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %24 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512xf32>) : !torch.vtensor<[512],f32>
+    %25 = torch.vtensor.literal(dense_resource<__elided__> : tensor<512x256x3x3xf32>) : !torch.vtensor<[512,256,3,3],f32>
+    %26 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %27 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %28 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %29 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %30 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256x256x3x3xf32>) : !torch.vtensor<[256,256,3,3],f32>
+    %31 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %32 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %33 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %34 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %35 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256x256x3x3xf32>) : !torch.vtensor<[256,256,3,3],f32>
+    %36 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %37 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %38 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %39 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256x128x1x1xf32>) : !torch.vtensor<[256,128,1,1],f32>
+    %40 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %41 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %42 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %43 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %44 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256x256x3x3xf32>) : !torch.vtensor<[256,256,3,3],f32>
+    %45 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %46 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %47 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %48 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
+    %49 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256x128x3x3xf32>) : !torch.vtensor<[256,128,3,3],f32>
+    %50 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %51 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %52 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %53 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %54 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128x128x3x3xf32>) : !torch.vtensor<[128,128,3,3],f32>
+    %55 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %56 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %57 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %58 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %59 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128x128x3x3xf32>) : !torch.vtensor<[128,128,3,3],f32>
+    %60 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %61 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %62 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %63 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128x64x1x1xf32>) : !torch.vtensor<[128,64,1,1],f32>
+    %64 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %65 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %66 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %67 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %68 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128x128x3x3xf32>) : !torch.vtensor<[128,128,3,3],f32>
+    %69 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %70 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %71 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %72 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128xf32>) : !torch.vtensor<[128],f32>
+    %73 = torch.vtensor.literal(dense_resource<__elided__> : tensor<128x64x3x3xf32>) : !torch.vtensor<[128,64,3,3],f32>
+    %74 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %75 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %76 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %77 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %78 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64x64x3x3xf32>) : !torch.vtensor<[64,64,3,3],f32>
+    %79 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %80 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %81 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %82 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %83 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64x64x3x3xf32>) : !torch.vtensor<[64,64,3,3],f32>
+    %84 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %85 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %86 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %87 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %88 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64x64x3x3xf32>) : !torch.vtensor<[64,64,3,3],f32>
+    %89 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %90 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %91 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %92 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %93 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64x64x3x3xf32>) : !torch.vtensor<[64,64,3,3],f32>
+    %94 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %95 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %96 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %97 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64xf32>) : !torch.vtensor<[64],f32>
+    %98 = torch.vtensor.literal(dense_resource<__elided__> : tensor<64x3x7x7xf32>) : !torch.vtensor<[64,3,7,7],f32>
     %int3 = torch.constant.int 3
     %int2 = torch.constant.int 2
     %int1 = torch.constant.int 1
@@ -221,105 +221,105 @@ linalg-on-tensors
 module attributes {torch.debug_module_name = "ResNet"} {
   func.func @forward(%arg0: tensor<1x3x224x224xf32>) -> tensor<1x1000xf32> {
     %false = arith.constant false
-    %cst = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1000xf32>
-    %cst_0 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1000x512xf32>
-    %cst_1 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_2 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_3 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_4 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_5 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>
-    %cst_6 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_7 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_8 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_9 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_10 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>
-    %cst_11 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_12 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_13 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_14 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x256x1x1xf32>
-    %cst_15 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_16 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_17 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_18 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_19 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>
-    %cst_20 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_21 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_22 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_23 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512xf32>
-    %cst_24 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x256x3x3xf32>
-    %cst_25 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_26 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_27 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_28 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_29 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>
-    %cst_30 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_31 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_32 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_33 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_34 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>
-    %cst_35 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_36 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_37 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_38 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128x1x1xf32>
-    %cst_39 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_40 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_41 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_42 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_43 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>
-    %cst_44 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_45 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_46 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_47 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256xf32>
-    %cst_48 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128x3x3xf32>
-    %cst_49 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_50 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_51 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_52 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_53 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>
-    %cst_54 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_55 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_56 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_57 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_58 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>
-    %cst_59 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_60 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_61 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_62 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x64x1x1xf32>
-    %cst_63 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_64 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_65 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_66 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_67 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>
-    %cst_68 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_69 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_70 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_71 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128xf32>
-    %cst_72 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x64x3x3xf32>
-    %cst_73 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_74 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_75 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_76 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_77 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>
-    %cst_78 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_79 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_80 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_81 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_82 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>
-    %cst_83 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_84 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_85 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_86 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_87 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>
-    %cst_88 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_89 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_90 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_91 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_92 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>
-    %cst_93 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_94 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_95 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_96 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64xf32>
-    %cst_97 = arith.constant opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x3x7x7xf32>
+    %cst = arith.constant dense_resource<__elided__> : tensor<1000xf32>
+    %cst_0 = arith.constant dense_resource<__elided__> : tensor<1000x512xf32>
+    %cst_1 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_2 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_3 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_4 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_5 = arith.constant dense_resource<__elided__> : tensor<512x512x3x3xf32>
+    %cst_6 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_7 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_8 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_9 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_10 = arith.constant dense_resource<__elided__> : tensor<512x512x3x3xf32>
+    %cst_11 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_12 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_13 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_14 = arith.constant dense_resource<__elided__> : tensor<512x256x1x1xf32>
+    %cst_15 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_16 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_17 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_18 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_19 = arith.constant dense_resource<__elided__> : tensor<512x512x3x3xf32>
+    %cst_20 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_21 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_22 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_23 = arith.constant dense_resource<__elided__> : tensor<512xf32>
+    %cst_24 = arith.constant dense_resource<__elided__> : tensor<512x256x3x3xf32>
+    %cst_25 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_26 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_27 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_28 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_29 = arith.constant dense_resource<__elided__> : tensor<256x256x3x3xf32>
+    %cst_30 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_31 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_32 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_33 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_34 = arith.constant dense_resource<__elided__> : tensor<256x256x3x3xf32>
+    %cst_35 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_36 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_37 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_38 = arith.constant dense_resource<__elided__> : tensor<256x128x1x1xf32>
+    %cst_39 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_40 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_41 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_42 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_43 = arith.constant dense_resource<__elided__> : tensor<256x256x3x3xf32>
+    %cst_44 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_45 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_46 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_47 = arith.constant dense_resource<__elided__> : tensor<256xf32>
+    %cst_48 = arith.constant dense_resource<__elided__> : tensor<256x128x3x3xf32>
+    %cst_49 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_50 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_51 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_52 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_53 = arith.constant dense_resource<__elided__> : tensor<128x128x3x3xf32>
+    %cst_54 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_55 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_56 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_57 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_58 = arith.constant dense_resource<__elided__> : tensor<128x128x3x3xf32>
+    %cst_59 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_60 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_61 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_62 = arith.constant dense_resource<__elided__> : tensor<128x64x1x1xf32>
+    %cst_63 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_64 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_65 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_66 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_67 = arith.constant dense_resource<__elided__> : tensor<128x128x3x3xf32>
+    %cst_68 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_69 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_70 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_71 = arith.constant dense_resource<__elided__> : tensor<128xf32>
+    %cst_72 = arith.constant dense_resource<__elided__> : tensor<128x64x3x3xf32>
+    %cst_73 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_74 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_75 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_76 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_77 = arith.constant dense_resource<__elided__> : tensor<64x64x3x3xf32>
+    %cst_78 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_79 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_80 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_81 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_82 = arith.constant dense_resource<__elided__> : tensor<64x64x3x3xf32>
+    %cst_83 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_84 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_85 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_86 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_87 = arith.constant dense_resource<__elided__> : tensor<64x64x3x3xf32>
+    %cst_88 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_89 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_90 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_91 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_92 = arith.constant dense_resource<__elided__> : tensor<64x64x3x3xf32>
+    %cst_93 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_94 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_95 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_96 = arith.constant dense_resource<__elided__> : tensor<64xf32>
+    %cst_97 = arith.constant dense_resource<__elided__> : tensor<64x3x7x7xf32>
     %cst_98 = arith.constant 1.000000e-05 : f64
     %cst_99 = arith.constant 0.000000e+00 : f32
     %cst_100 = arith.constant -3.40282347E+38 : f32
@@ -855,30 +855,30 @@ module attributes {torch.debug_module_name = "ResNet"} {
 tosa 
  module attributes {torch.debug_module_name = "ResNet"} {
   func.func @forward(%arg0: tensor<1x3x224x224xf32>) -> tensor<1x1000xf32> {
-    %0 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %1 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %2 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %3 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1000x512xf32>} : () -> tensor<1000x512xf32>
-    %4 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>} : () -> tensor<512x512x3x3xf32>
-    %5 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>} : () -> tensor<512x512x3x3xf32>
-    %6 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x256x1x1xf32>} : () -> tensor<512x256x1x1xf32>
-    %7 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x512x3x3xf32>} : () -> tensor<512x512x3x3xf32>
-    %8 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x256x3x3xf32>} : () -> tensor<512x256x3x3xf32>
-    %9 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>} : () -> tensor<256x256x3x3xf32>
-    %10 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>} : () -> tensor<256x256x3x3xf32>
-    %11 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128x1x1xf32>} : () -> tensor<256x128x1x1xf32>
-    %12 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x256x3x3xf32>} : () -> tensor<256x256x3x3xf32>
-    %13 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x128x3x3xf32>} : () -> tensor<256x128x3x3xf32>
-    %14 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>} : () -> tensor<128x128x3x3xf32>
-    %15 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>} : () -> tensor<128x128x3x3xf32>
-    %16 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x64x1x1xf32>} : () -> tensor<128x64x1x1xf32>
-    %17 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x128x3x3xf32>} : () -> tensor<128x128x3x3xf32>
-    %18 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x64x3x3xf32>} : () -> tensor<128x64x3x3xf32>
-    %19 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>} : () -> tensor<64x64x3x3xf32>
-    %20 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>} : () -> tensor<64x64x3x3xf32>
-    %21 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>} : () -> tensor<64x64x3x3xf32>
-    %22 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x64x3x3xf32>} : () -> tensor<64x64x3x3xf32>
-    %23 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x3x7x7xf32>} : () -> tensor<64x3x7x7xf32>
+    %0 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %1 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %2 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %3 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1000x512xf32>} : () -> tensor<1000x512xf32>
+    %4 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x512x3x3xf32>} : () -> tensor<512x512x3x3xf32>
+    %5 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x512x3x3xf32>} : () -> tensor<512x512x3x3xf32>
+    %6 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x256x1x1xf32>} : () -> tensor<512x256x1x1xf32>
+    %7 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x512x3x3xf32>} : () -> tensor<512x512x3x3xf32>
+    %8 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x256x3x3xf32>} : () -> tensor<512x256x3x3xf32>
+    %9 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x256x3x3xf32>} : () -> tensor<256x256x3x3xf32>
+    %10 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x256x3x3xf32>} : () -> tensor<256x256x3x3xf32>
+    %11 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x128x1x1xf32>} : () -> tensor<256x128x1x1xf32>
+    %12 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x256x3x3xf32>} : () -> tensor<256x256x3x3xf32>
+    %13 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x128x3x3xf32>} : () -> tensor<256x128x3x3xf32>
+    %14 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x128x3x3xf32>} : () -> tensor<128x128x3x3xf32>
+    %15 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x128x3x3xf32>} : () -> tensor<128x128x3x3xf32>
+    %16 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x64x1x1xf32>} : () -> tensor<128x64x1x1xf32>
+    %17 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x128x3x3xf32>} : () -> tensor<128x128x3x3xf32>
+    %18 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x64x3x3xf32>} : () -> tensor<128x64x3x3xf32>
+    %19 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x64x3x3xf32>} : () -> tensor<64x64x3x3xf32>
+    %20 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x64x3x3xf32>} : () -> tensor<64x64x3x3xf32>
+    %21 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x64x3x3xf32>} : () -> tensor<64x64x3x3xf32>
+    %22 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x64x3x3xf32>} : () -> tensor<64x64x3x3xf32>
+    %23 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x3x7x7xf32>} : () -> tensor<64x3x7x7xf32>
     %24 = "tosa.const"() {value = dense<0.000000e+00> : tensor<64xf32>} : () -> tensor<64xf32>
     %25 = "tosa.const"() {value = dense<[0, 2, 3, 1]> : tensor<4xi32>} : () -> tensor<4xi32>
     %26 = "tosa.const"() {value = dense<[0, 3, 1, 2]> : tensor<4xi32>} : () -> tensor<4xi32>
@@ -886,82 +886,82 @@ tosa
     %28 = "tosa.const"() {value = dense<0.000000e+00> : tensor<256xf32>} : () -> tensor<256xf32>
     %29 = "tosa.const"() {value = dense<0.000000e+00> : tensor<512xf32>} : () -> tensor<512xf32>
     %30 = "tosa.const"() {value = dense<[1, 0]> : tensor<2xi32>} : () -> tensor<2xi32>
-    %31 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
-    %32 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %33 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %34 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %35 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
-    %36 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %37 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %38 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %39 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
-    %40 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %41 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %42 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %43 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
-    %44 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %45 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %46 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %47 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
-    %48 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %49 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %50 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
-    %51 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
-    %52 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %53 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %54 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %55 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
-    %56 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %57 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %58 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
-    %59 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %60 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %61 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
-    %62 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %63 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %64 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %65 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
-    %66 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %67 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %68 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
-    %69 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
-    %70 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %71 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %72 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %73 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
-    %74 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %75 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %76 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
-    %77 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %78 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %79 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
-    %80 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %81 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %82 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %83 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
-    %84 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %85 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %86 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
-    %87 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
-    %88 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %89 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %90 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %91 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
-    %92 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %93 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %94 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
-    %95 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %96 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %97 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
-    %98 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %99 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %100 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %101 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
-    %102 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %31 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
+    %32 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %33 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %34 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %35 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
+    %36 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %37 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %38 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %39 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
+    %40 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %41 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %42 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %43 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
+    %44 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %45 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %46 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %47 = "tosa.const"() {value = dense_resource<__elided__> : tensor<64x1x1xf32>} : () -> tensor<64x1x1xf32>
+    %48 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %49 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %50 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x64x1x1xf32>} : () -> tensor<1x64x1x1xf32>
+    %51 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
+    %52 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %53 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %54 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %55 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
+    %56 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %57 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %58 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
+    %59 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %60 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %61 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
+    %62 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %63 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %64 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %65 = "tosa.const"() {value = dense_resource<__elided__> : tensor<128x1x1xf32>} : () -> tensor<128x1x1xf32>
+    %66 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %67 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %68 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x128x1x1xf32>} : () -> tensor<1x128x1x1xf32>
+    %69 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
+    %70 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %71 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %72 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %73 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
+    %74 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %75 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %76 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
+    %77 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %78 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %79 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
+    %80 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %81 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %82 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %83 = "tosa.const"() {value = dense_resource<__elided__> : tensor<256x1x1xf32>} : () -> tensor<256x1x1xf32>
+    %84 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %85 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %86 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x256x1x1xf32>} : () -> tensor<1x256x1x1xf32>
+    %87 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
+    %88 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %89 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %90 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %91 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
+    %92 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %93 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %94 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
+    %95 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %96 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %97 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
+    %98 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %99 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %100 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %101 = "tosa.const"() {value = dense_resource<__elided__> : tensor<512x1x1xf32>} : () -> tensor<512x1x1xf32>
+    %102 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
     %103 = "tosa.const"() {value = dense<9.99999974E-6> : tensor<1x1x1xf32>} : () -> tensor<1x1x1xf32>
-    %104 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %105 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
-    %106 = "tosa.const"() {value = opaque<"elided_large_const", "0xDEADBEEF"> : tensor<1x1000xf32>} : () -> tensor<1x1000xf32>
+    %104 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %105 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x512x1x1xf32>} : () -> tensor<1x512x1x1xf32>
+    %106 = "tosa.const"() {value = dense_resource<__elided__> : tensor<1x1000xf32>} : () -> tensor<1x1000xf32>
     %107 = "tosa.transpose"(%arg0, %25) : (tensor<1x3x224x224xf32>, tensor<4xi32>) -> tensor<1x224x224x3xf32>
     %108 = "tosa.transpose"(%23, %25) : (tensor<64x3x7x7xf32>, tensor<4xi32>) -> tensor<64x7x7x3xf32>
     %109 = "tosa.conv2d"(%107, %108, %24) {dilation = [1, 1], pad = [3, 3, 3, 3], stride = [2, 2]} : (tensor<1x224x224x3xf32>, tensor<64x7x7x3xf32>, tensor<64xf32>) -> tensor<1x112x112x64xf32>
