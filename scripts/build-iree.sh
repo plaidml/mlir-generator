@@ -2,6 +2,7 @@
 
 # Builds IREE following the following documentation:
 # https://iree-org.github.io/iree/building-from-source/getting-started/
+# https://iree-org.github.io/iree/building-from-source/python-bindings-and-importers/
 
 BUILD_TYPE=Release
 if [ "$1" == "-d" ]; then
@@ -34,13 +35,15 @@ echo " + Creating a fresh venv"
 rm -rf mlir_venv
 python -m venv mlir_venv
 echo "export PATH=$PATH:$ROOT/build/tools" >> mlir_venv/bin/activate
+echo "export PYTHONPATH=$ROOT/build/compiler/bindings/python:$ROOT/build/runtime/bindings/python" >> mlir_venv/bin/activate
 echo "export CMAKE_GENERATOR=Ninja" >> mlir_venv/bin/activate
 source mlir_venv/bin/activate
 
 # Install Python dependencies
 echo " + Install Python dependencies"
 python -m pip install --upgrade pip
-python -m pip install iree-tools-tflite
+python -m pip install -r ./runtime/bindings/python/iree/runtime/build_requirements.txt
+python -m pip install tf-nightly iree-tools-tflite keras
 
 # Checkout iree repos too
 echo " + Updating submodules"
@@ -53,13 +56,19 @@ cmake -Bbuild -S . \
   -DCMAKE_C_COMPILER=clang \
   -DCMAKE_CXX_COMPILER=clang++ \
   -DIREE_ENABLE_ASSERTIONS=ON \
+  -DIREE_BUILD_PYTHON_BINDINGS=ON \
   -DIREE_ENABLE_LLD=ON
 
 ninja -C build
 
 # Basic tests
-echo " + Run iree tests"
-ninja -C build iree-test-deps
-ctest --test-dir build --output-on-failure --parallel $(nproc)
+#echo " + Run iree tests"
+#ninja -C build iree-test-deps
+#ctest --test-dir build --output-on-failure --parallel $(nproc)
+
+# Python bindings test
+echo " + Checking IREE Python bindings"
+python -c "import iree.compiler"
+python -c "import iree.runtime"
 
 popd
