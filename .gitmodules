@@ -4,3 +4,6 @@
 [submodule "external/iree"]
 	path = external/iree
 	url = https://github.com/iree-org/iree.git
+[submodule "external/mlir-hlo"]
+	path = external/mlir-hlo
+	url = https://github.com/tensorflow/mlir-hlo.git
