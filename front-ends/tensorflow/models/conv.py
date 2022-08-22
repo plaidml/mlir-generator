@@ -26,10 +26,10 @@ if __name__ == "__main__":
 
     model = MyModel(tf.TensorSpec(shape=input_shape, dtype=tf.float32))
 
-    model.compile(optimizer='sgd', loss='mse')
-    model.fit(
-        tf.constant(tf.ones(shape=input_shape), dtype=tf.float32),
-        tf.constant(tf.ones(shape=(2, 2), dtype=tf.float32)))
+    # model.compile(optimizer='sgd', loss='mse')
+    # model.fit(
+    #     tf.constant(tf.ones(shape=input_shape), dtype=tf.float32),
+    #     tf.constant(tf.ones(shape=(2, 2), dtype=tf.float32)))
 
     func = tf.function(model, input_signature=[tf.TensorSpec(shape=input_shape, dtype=tf.float32)])
     concrete_func = func.get_concrete_function(

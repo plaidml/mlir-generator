@@ -1,4 +1,3 @@
-1/1 [==============================] - ETA: 0s - loss: 0.44891/1 [==============================] - 0s 225ms/step - loss: 0.4489
 module attributes {tf.versions = {bad_consumers = [], min_consumer = 0 : i32, producer = 1087 : i32}} {
   func @main(%arg0: tensor<2x28x28x3xf32>) -> tensor<2x?x?x?xf32> attributes {tf.entry_function = {control_outputs = "", inputs = "args_0:0", outputs = "Identity:0"}} {
     %0 = "tf.Placeholder"() {device = "", shape = #tf_type.shape<>} : () -> tensor<!tf_type.resource>
