@@ -10,8 +10,8 @@ class MyModel(tf.keras.Model):
         self.d2 = tf.keras.layers.Dense(32, activation='relu', use_bias=True)
         self.out = tf.keras.layers.Dense(10)
 
-    def call(self, input):
-        x = self.x(input)
+    def call(self, x):
+        x = self.x(x)
         x = self.d1(x)
         x = self.d2(x)
         x = self.out(x)
@@ -36,9 +36,21 @@ def test_model_class():
     concrete_func = func.get_concrete_function(
         tf.constant(tf.ones(shape=(2, 16), dtype=tf.float32))
     )
+
+    # Basically what convert_graph_def should do
+    # This works!
     graph = concrete_func.graph.as_graph_def()
-    # https://www.tensorflow.org/api_docs/python/tf/mlir/experimental/convert_graph_def
-    print(tf.mlir.experimental.convert_graph_def(graph, show_debug_info=False))
+    mlir_tf = import_graphdef(
+        graph,
+        "tf-standard-pipeline",
+        False,
+        input_names=["args_0:0"],
+        input_data_types=["DT_FLOAT"],
+        input_data_shapes=["2,16"],
+        output_names=["Identity:0"],
+    )
+    print(mlir_tf)
+
 
 def test_sequential():
     print("Preparing a model as a keras.Sequential")
@@ -59,6 +71,7 @@ def test_sequential():
         tf.constant(tf.ones(shape=(2, 16)), dtype=tf.float32),
         tf.constant(tf.ones(shape=(2, 10), dtype=tf.float32)))
 
+    # This doesn't work, but should...
     print("Now, trying to create an MLIR module with (1)[2, 16] as input")
     # https://www.tensorflow.org/api_docs/python/tf/function#input_signatures_2
     func = tf.function(model, input_signature=[tf.TensorSpec(shape=(2 ,16,), dtype=tf.float32)])
@@ -73,15 +86,3 @@ if __name__ == "__main__":
     test_model_class()
 
     test_sequential()
-
-    # Basically what convert_graph_def should do
-    # mlir_tf = import_graphdef(
-    #     graph,
-    #     "tf-standard-pipeline",
-    #     False,
-    #     input_names=["input"],
-    #     input_data_types=["DT_FLOAT"],
-    #     input_data_shapes=["2,16"],
-    #     output_names=["output"],
-    # )
-    # print(mlir_tf)
