@@ -21,13 +21,6 @@ fi
 echo " + Updating submodules"
 git submodule update --depth 1 --init --recursive
 
-# Find patch directory
-PATCHES="$(git rev-parse --show-toplevel)/patches"
-if [ ! -d "$PATCHES" ]; then
-    echo "Cannot find patches directory"
-    exit 1
-fi
-
 # Go into mlir-hlo subrepo
 ROOT="$(git rev-parse --show-toplevel)/external/mlir-hlo"
 if [ ! -d "$ROOT" ]; then
@@ -61,14 +54,6 @@ git co -b mlir-hlo $LLVM_VERSION
 popd
 mkdir -p llvm-build
 ./build_tools/build_mlir.sh ${PWD}/llvm-project/ ${PWD}/llvm-build
-
-# Path mlir-hlo (see: https://github.com/tensorflow/mlir-hlo/issues/46)
-echo " + Applying patches"
-if grep -q MLIRTosaDialect tosa/CMakeLists.txt; then
-  echo "Patch already applied"
-else
-  patch -p1 < "$PATCHES"/mlir-hlo-01.patch
-fi
 
 # Build mlir-hlo with LLVM in-tree
 echo " + Build mlir-hlo in-tree"
