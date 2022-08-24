@@ -33,8 +33,8 @@ pushd "$ROOT"
 echo " + Creating a fresh venv"
 rm -rf mlir_venv
 python -m venv mlir_venv
-#echo "export PATH=$PATH:$ROOT/build/tools" >> mlir_venv/bin/activate
-#echo "export PYTHONPATH=$ROOT/build/compiler/bindings/python:$ROOT/build/runtime/bindings/python" >> mlir_venv/bin/activate
+#echo "export PYTHONPATH=$ROOT/build/..." >> mlir_venv/bin/activate
+echo "export PATH=$PATH:$ROOT/build/bin" >> mlir_venv/bin/activate
 echo "export CMAKE_GENERATOR=Ninja" >> mlir_venv/bin/activate
 source mlir_venv/bin/activate
 
