@@ -11,10 +11,7 @@ fi
 # Go into tensorflow subrepo
 # This is created on the fly, not a submodule
 ROOT="$(git rev-parse --show-toplevel)/external/tensorflow"
-if [ ! -d "$ROOT" ]; then
-    echo "Cannot find repository root"
-    exit 1
-fi
+rm -rf "$ROOT"
 mkdir -p "$ROOT"
 pushd "$ROOT"
 
