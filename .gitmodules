@@ -7,3 +7,6 @@
 [submodule "external/mlir-hlo"]
 	path = external/mlir-hlo
 	url = https://github.com/tensorflow/mlir-hlo.git
+[submodule "external/tensorflow"]
+	path = external/tensorflow
+	url = https://github.com/tensorflow/tensorflow.git
