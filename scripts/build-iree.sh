@@ -43,7 +43,7 @@ source mlir_venv/bin/activate
 echo " + Install Python dependencies"
 python -m pip install --upgrade pip
 python -m pip install -r ./runtime/bindings/python/iree/runtime/build_requirements.txt
-python -m pip install tf-nightly iree-tools-tflite keras
+python -m pip install tf-nightly iree-tools-tf keras
 
 # Checkout iree repos too
 echo " + Updating submodules"
