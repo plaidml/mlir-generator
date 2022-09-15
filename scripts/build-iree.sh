@@ -34,7 +34,7 @@ pushd "$ROOT"
 echo " + Creating a fresh venv"
 rm -rf mlir_venv
 python -m venv mlir_venv
-echo "export PATH=$PATH:$ROOT/build/tools" >> mlir_venv/bin/activate
+echo "export PATH=\$PATH:$ROOT/build/tools" >> mlir_venv/bin/activate
 echo "export PYTHONPATH=$ROOT/build/compiler/bindings/python:$ROOT/build/runtime/bindings/python" >> mlir_venv/bin/activate
 echo "export CMAKE_GENERATOR=Ninja" >> mlir_venv/bin/activate
 source mlir_venv/bin/activate
@@ -55,14 +55,15 @@ cmake -Bbuild -S . \
   -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
   -DCMAKE_C_COMPILER=clang \
   -DCMAKE_CXX_COMPILER=clang++ \
-  -DIREE_ENABLE_ASSERTIONS=ON
+  -DIREE_ENABLE_ASSERTIONS=ON \
+  -DIREE_BUILD_PYTHON_BINDINGS=ON
 
 ninja -C build
 
 # Basic tests
 #echo " + Run iree tests"
 #ninja -C build iree-test-deps
-#ctest --test-dir build --output-on-failure --parallel $(nproc)
+#ctest --test-dir build --progress --parallel $(nproc)
 
 # Python bindings test
 echo " + Checking IREE Python bindings"
