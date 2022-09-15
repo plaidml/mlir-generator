@@ -7,7 +7,7 @@ import iree.compiler
 
 def create_model():
   model = tf.keras.Sequential([
-    keras.layers.Dense(256, activation='relu', input_shape=(2,128)),
+    keras.layers.Dense(32, activation='relu', input_shape=(2,16)),
     keras.layers.Dense(10)
   ])
 
@@ -17,25 +17,21 @@ def create_model():
 
   return model
 
-# Create a basic model instance
-model = create_model()
-
-# Display the model's architecture
-model.summary()
-
-# Get path of the script as ROOT
+# Global path options
 ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
-print(ROOT)
 SAVED = os.path.join(ROOT, ".saved", "linear")
 MLIR = os.path.join(ROOT, "mlir", "linear.mlir")
 
-# Save, so that IREE can load it
+# Create a basic model instance and
+# save, so that IREE can load it
+model = create_model()
+model.summary()
 tf.saved_model.save(model, SAVED)
 
 # Call iree importer
 subprocess.call(['iree-import-tf',
                  '--tf-import-type=savedmodel_v1',
-                 '--tf-savedmodel-exported-names=predict',
+                 '--tf-savedmodel-exported-names=serving_default',
                  SAVED,
                  '-o',
                  MLIR])
