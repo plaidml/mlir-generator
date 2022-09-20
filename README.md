@@ -23,28 +23,19 @@ with testing, even if one does not use the Docker image.
 
 _Warning: This is very much work-in-progress, don't expect half of it to work._
 
-First, pull the docker image:
+Each front-end has a build script, for example:
 ```
-docker pull rengolin/mlir-generator
-```
-
-Then start and enter the container:
-```
-$ docker image ls
-REPOSITORY                TAG       IMAGE ID       CREATED             SIZE
-mlir-generator            latest    30b120d50afd   About an hour ago   1.54GB
-
-$ docker run 30b120d50afd
-
-$ docker exec -it 30b120d50afd /bin/bash
+cd $SRC
+./scripts/build-iree.sh
 ```
 
-Enter the repo and run the generator script:
+It also has models ready to use (after built):
 ```
-$ cd mlir-generator
+source external/iree/mlir_venv/bin/activate
+python front-ends/iree/models/linear.py
+```
 
-$ ./scripts/emit-mlir-files.sh
-```
+Results are in `front-ends/<front-end-name>/mlir`.
 
 ## Updating
 
