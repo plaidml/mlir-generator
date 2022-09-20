@@ -20,7 +20,7 @@ if [ -d "$PROJECT" ]; then
 fi
 # Make sure the repo is in a good shape
 echo " + Updating submodules"
-git submodule update --depth 1 --init --recursive
+git submodule update --init --recursive
 
 # Go into iree subrepo
 ROOT="$(git rev-parse --show-toplevel)/external/iree"
@@ -36,34 +36,39 @@ rm -rf mlir_venv
 python -m venv mlir_venv
 echo "export PATH=\$PATH:$ROOT/build/tools" >> mlir_venv/bin/activate
 echo "export PYTHONPATH=$ROOT/build/compiler/bindings/python:$ROOT/build/runtime/bindings/python" >> mlir_venv/bin/activate
-echo "export CMAKE_GENERATOR=Ninja" >> mlir_venv/bin/activate
 source mlir_venv/bin/activate
 
 # Install Python dependencies
 echo " + Install Python dependencies"
 python -m pip install --upgrade pip
 python -m pip install -r ./runtime/bindings/python/iree/runtime/build_requirements.txt
-python -m pip install tf-nightly iree-tools-tf keras
+python -m pip install tensorflow iree-tools-tf keras
 
 # Checkout iree repos too
 echo " + Updating submodules"
-git submodule update --depth 1 --init --recursive
+git submodule update --init --recursive
 
 # Build iree with LLVM in-tree
 echo " + Build iree in-tree"
-cmake -Bbuild -S . \
-  -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
-  -DCMAKE_C_COMPILER=clang \
-  -DCMAKE_CXX_COMPILER=clang++ \
-  -DIREE_ENABLE_ASSERTIONS=ON \
-  -DIREE_BUILD_PYTHON_BINDINGS=ON
-
-ninja -C build
+cmake -GNinja -Bbuild -S . \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_C_COMPILER_LAUNCHER=ccache \
+    -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+    -DCMAKE_C_COMPILER=clang \
+    -DCMAKE_CXX_COMPILER=clang++ \
+    -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+    -DLLVM_ENABLE_ASSERTIONS=ON \
+    -DIREE_ENABLE_ASSERTIONS=ON \
+    -DIREE_BUILD_PYTHON_BINDINGS=ON \
+    -DIREE_ENABLE_LLD=ON \
+    -DPython3_EXECUTABLE=$(which python)
 
 # Basic tests
-#echo " + Run iree tests"
-#ninja -C build iree-test-deps
-#ctest --test-dir build --progress --parallel $(nproc)
+# Some tests fail
+SKIP_TEST="-E compiler_tflite_test"
+ninja -C build iree-test-deps
+ctest $SKIP_TEST --output-on-failure --parallel $(nproc) --test-dir build
 
 # Python bindings test
 echo " + Checking IREE Python bindings"
