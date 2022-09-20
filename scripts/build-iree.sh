@@ -63,12 +63,11 @@ cmake -GNinja -Bbuild -S . \
     -DIREE_BUILD_PYTHON_BINDINGS=ON \
     -DIREE_ENABLE_LLD=ON \
     -DPython3_EXECUTABLE=$(which python)
+ninja -C build
 
 # Basic tests
-# Some tests fail
-SKIP_TEST="-E compiler_tflite_test"
 ninja -C build iree-test-deps
-ctest $SKIP_TEST --output-on-failure --parallel $(nproc) --test-dir build
+ctest --output-on-failure --parallel $(nproc) --test-dir build
 
 # Python bindings test
 echo " + Checking IREE Python bindings"
