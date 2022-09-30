@@ -108,6 +108,7 @@ fi
 # Python bindings test
 echo " + Checking IREE Python bindings"
 python -c "import iree.compiler"
+python -c "import iree.runtime"
 
 deactivate
 popd
