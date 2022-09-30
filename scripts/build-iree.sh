@@ -97,7 +97,10 @@ cmake -GNinja -B$BLD_DIR -S $ROOT \
 
 # Not everything works with TPP
 if [ "$BUILD_WITH_TPP" == "True" ]; then
-  ninja -C "$BLD_DIR" iree-opt iree-compile iree-run-module iree-benchmark-module
+  ninja -C "$BLD_DIR" iree-opt iree-compile iree-run-module iree-benchmark-module iree-lld
+  ninja -C "$BLD_DIR" compiler/bindings/python/iree/compiler/tflite.py
+  ninja -C "$BLD_DIR" compiler/bindings/python/iree/compiler/tools/tflite.py
+  ninja -C "$BLD_DIR" runtime/package
 else
   ninja -C "$BLD_DIR"
 fi
