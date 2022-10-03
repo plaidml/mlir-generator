@@ -30,23 +30,24 @@ class Dense(tf.Module):
     return tf.nn.relu(y)
 
 class SequentialModule(tf.Module):
-  def __init__(self, name=None):
-    super().__init__(name=name)
-    self.input_layer = Dense(in_features=INPUT_LEN, out_features=HIDDEN_LEN)
-    self.layers = []
-    for layer in range(NUM_LAYERS):
-        self.layers.append(Dense(in_features=HIDDEN_LEN, out_features=HIDDEN_LEN))
-    self.output_layer = Dense(in_features=HIDDEN_LEN, out_features=OUTPUT_LEN)
+    def __init__(self, name=None):
+        super().__init__(name=name)
+        self.input_layer = Dense(in_features=INPUT_LEN, out_features=HIDDEN_LEN)
+        self.layers = []
+        for layer in range(NUM_LAYERS):
+            self.layers.append(Dense(in_features=HIDDEN_LEN, out_features=HIDDEN_LEN))
+        self.output_layer = Dense(in_features=HIDDEN_LEN, out_features=OUTPUT_LEN)
 
-  def __call__(self, x):
-    x = self.input_layer(x)
-    for layer in range(NUM_LAYERS):
-        x = self.layers[layer](x)
-    return tf.nn.softmax(x)
+    @tf.function(input_signature=[[tf.TensorSpec(shape=[BATCH_SIZE,INPUT_LEN],dtype=tf.float32)]])
+    def predict(self, x):
+        x = self.input_layer(x)
+        for layer in range(NUM_LAYERS):
+            x = self.layers[layer](x)
+        return tf.nn.softmax(x)
 
 if __name__ == "__main__":
     # Compile the model using IREE
-    compiler_module = tfc.compile_module(SequentialModule(), exported_names = ["learn"], import_only=True)
+    compiler_module = tfc.compile_module(SequentialModule(), exported_names = ["predict"], import_only=True)
     backend = "llvm-cpu"
     args = ["--iree-llvm-target-cpu-features=host", "--iree-mhlo-demote-i64-to-i32=false", "--iree-flow-demote-i64-to-i32"]
     backend_config = "local-task"
