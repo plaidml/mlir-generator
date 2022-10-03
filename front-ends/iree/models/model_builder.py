@@ -43,6 +43,7 @@ class SequentialModule(tf.Module):
         x = self.input_layer(x)
         for layer in range(NUM_LAYERS):
             x = self.layers[layer](x)
+        x = self.output_layer(x)
         return tf.nn.softmax(x)
 
 if __name__ == "__main__":
