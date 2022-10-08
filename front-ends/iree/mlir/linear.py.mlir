@@ -160,4 +160,3 @@ func.func private @__inference_predict_670(%arg0: tensor<1x128xf32> {tf._user_sp
   return %60 : tensor<1x1x10xf32>
 }
 
-

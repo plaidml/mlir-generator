@@ -48,6 +48,7 @@ cat "$TEMP_DIR"/err \
   | grep -v VmModule \
   | grep -v TypeError \
   | grep -v "GPU devices" \
+  | grep -v Downloading \
   | grep -v TensorFlow > $MLIR_FILE
 
 # Clean-up debug symbols from MLIR file

@@ -1,37 +1,44 @@
+# Ref: https://www.tensorflow.org/guide/intro_to_modules
+import driver
+
+import numpy as np
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-import subprocess
+import tempfile
 import tensorflow as tf
-from tensorflow import keras
-import iree.compiler
 
-def create_model():
-  model = tf.keras.Sequential([
-    keras.layers.Dense(32, activation='relu', input_shape=(2,16)),
-    keras.layers.Dense(10)
-  ])
+# TODO: Make these into command-line arguments
+BATCH_SIZE = 1
+INPUT_LEN = 128
+HIDDEN_LEN = 256
+OUTPUT_LEN = 10
+NUM_LAYERS = 1
 
-  model.compile(optimizer='adam',
-                loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-                metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
+class Dense(tf.Module):
+  def __init__(self, in_features, out_features, name=None):
+    super().__init__(name=name)
+    self.w = tf.Variable(
+      tf.random.normal([in_features, out_features]), name='w')
+    self.b = tf.Variable(tf.zeros([out_features]), name='b')
+  def __call__(self, x):
+    y = tf.matmul(x, self.w) + self.b
+    return tf.nn.relu(y)
 
-  return model
+class SequentialModule(tf.Module):
+    def __init__(self, name=None):
+        super().__init__(name=name)
+        self.input_layer = Dense(in_features=INPUT_LEN, out_features=HIDDEN_LEN)
+        self.layers = []
+        for layer in range(NUM_LAYERS):
+            self.layers.append(Dense(in_features=HIDDEN_LEN, out_features=HIDDEN_LEN))
+        self.output_layer = Dense(in_features=HIDDEN_LEN, out_features=OUTPUT_LEN)
 
-# Global path options
-ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
-SAVED = os.path.join(ROOT, ".saved", "linear")
-MLIR = os.path.join(ROOT, "mlir", "linear.mlir")
+    @tf.function(input_signature=[[tf.TensorSpec(shape=[BATCH_SIZE,INPUT_LEN],dtype=tf.float32)]])
+    def predict(self, x):
+        x = self.input_layer(x)
+        for layer in range(NUM_LAYERS):
+            x = self.layers[layer](x)
+        x = self.output_layer(x)
+        return tf.nn.softmax(x)
 
-# Create a basic model instance and
-# save, so that IREE can load it
-model = create_model()
-model.summary()
-tf.saved_model.save(model, SAVED)
-
-# Call iree importer
-subprocess.call(['iree-import-tf',
-                 '--tf-import-type=savedmodel_v1',
-                 '--tf-savedmodel-exported-names=serving_default',
-                 SAVED,
-                 '-o',
-                 MLIR])
+if __name__ == "__main__":
+    driver.build_module(SequentialModule(), ["predict"])
