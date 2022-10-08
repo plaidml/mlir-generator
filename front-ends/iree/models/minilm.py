@@ -1,14 +1,9 @@
 # Ref: https://github.com/iree-org/iree-samples/blob/main/ModelCompiler/nlp_models/huggingface_MiniLM_run.py
-import numpy as np
 import driver
 
-import numpy as np
-import os
-import tempfile
 import tensorflow as tf
 
-import time
-from transformers import BertModel, BertTokenizer, TFBertModel
+from transformers import TFBertModel
 
 # TODO: Make these into command-line arguments
 MAX_SEQUENCE_LENGTH = 512

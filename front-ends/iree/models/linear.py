@@ -1,9 +1,6 @@
 # Ref: https://www.tensorflow.org/guide/intro_to_modules
 import driver
 
-import numpy as np
-import os
-import tempfile
 import tensorflow as tf
 
 # TODO: Make these into command-line arguments

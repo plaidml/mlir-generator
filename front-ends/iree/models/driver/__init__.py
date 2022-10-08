@@ -1,11 +1,6 @@
 # Stolen from https://github.com/iree-org/iree-samples/blob/main/ModelCompiler/nlp_models/bert_small_run.py
-from iree import runtime as ireert
-from iree.tf.support import module_utils
 from iree.compiler import tf as tfc
 from iree.compiler import compile_str
-import sys
-from absl import app
-import time
 
 def build_module(model, exports):
     # Compile the model using IREE
