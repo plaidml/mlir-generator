@@ -65,7 +65,7 @@ source $VENV_DIR/bin/activate
 echo " + Install Python dependencies"
 python -m pip install --upgrade pip
 python -m pip install -r $ROOT/runtime/bindings/python/iree/runtime/build_requirements.txt
-python -m pip install tensorflow iree-tools-tf keras
+python -m pip install tensorflow iree-tools-tf keras transformers torch datasets
 
 # Checkout iree repos too
 echo " + Updating submodules"
