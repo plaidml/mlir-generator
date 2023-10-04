@@ -32,4 +32,5 @@ Results are in `<front-end-name>/mlir`.
 If you want to build an existing front-end, you need to:
 1. Add a new directory for the front-end
 2. Add a `prepare.sh` script that installs it and prepares the virtualenv
-4. Add a `generate.sh` script that generates all the MLIR files
+3. Add a `generate.sh` script that generates all the MLIR files
+4. Add models as Python files in `models`, run the export, and save them as MLIR files in `mlir`
