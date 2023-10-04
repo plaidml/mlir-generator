@@ -11,7 +11,7 @@ fi
 
 # For each Python script, generate an MLIR file
 # with the same name and different extension
-pushd "$ROOT/front-ends/torch-mlir/models"
+pushd "$ROOT/torch-script/models"
 for MODEL in $(find . -type f -name \*.py); do
     OUT="${MODEL%.py}.mlir"
     python "$MODEL" > "../mlir/$OUT"
