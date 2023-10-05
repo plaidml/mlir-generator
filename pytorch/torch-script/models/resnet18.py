@@ -2,7 +2,7 @@ import torch
 import torchvision
 
 import sys
-sys.path.append('../lib')
+sys.path.append('../../lib')
 from torch_mlir_compile import torch_mlir_compile
 
 resnet18 = torchvision.models.resnet18(weights=torchvision.models.resnet.ResNet18_Weights.IMAGENET1K_V1)

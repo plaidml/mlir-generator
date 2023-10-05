@@ -18,7 +18,6 @@ def torch_mlir_compile(model, input, output_formats=['torch', 'linalg-on-tensors
     # TorchScript models do not care for return from torch_mlir_compile.
     return module
 
-
 @make_simple_dynamo_backend
 def refbackend_torchdynamo_backend(fx_graph: torch.fx.GraphModule,
                                    example_inputs: List[torch.Tensor]):
