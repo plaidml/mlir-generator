@@ -6,7 +6,7 @@ torch
     %none = torch.constant.none
     %int0 = torch.constant.int 0
     %int1 = torch.constant.int 1
-    %0 = torch.vtensor.literal(dense<[0.030073069, -0.00633022189, 3.07992101E-4, 0.0396411791, -0.0485531315, -2.76342034E-5, 0.0205513164, -0.0391363725, 0.0608757138, -5.853670e-02]> : tensor<10xf32>) : !torch.vtensor<[10],f32>
+    %0 = torch.vtensor.literal(dense<[-0.00630987436, -0.0443928167, 0.0618280694, -0.0368138924, -0.0515485033, 0.00771782547, -0.0303224251, -0.0296016484, 0.0289968103, 0.0607223138]> : tensor<10xf32>) : !torch.vtensor<[10],f32>
     %1 = torch.vtensor.literal(dense_resource<__elided__> : tensor<10x256xf32>) : !torch.vtensor<[10,256],f32>
     %2 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256xf32>) : !torch.vtensor<[256],f32>
     %3 = torch.vtensor.literal(dense_resource<__elided__> : tensor<256x128xf32>) : !torch.vtensor<[256,128],f32>
@@ -38,7 +38,7 @@ module attributes {torch.debug_module_name = "Net"} {
   ml_program.global private mutable @global_seed(dense<0> : tensor<i64>) : tensor<i64>
   func.func @forward(%arg0: tensor<2x128xf32>) -> tensor<2x10xf32> {
     %c0_i64 = arith.constant 0 : i64
-    %cst = arith.constant dense<[0.030073069, -0.00633022189, 3.07992101E-4, 0.0396411791, -0.0485531315, -2.76342034E-5, 0.0205513164, -0.0391363725, 0.0608757138, -5.853670e-02]> : tensor<10xf32>
+    %cst = arith.constant dense<[-0.00630987436, -0.0443928167, 0.0618280694, -0.0368138924, -0.0515485033, 0.00771782547, -0.0303224251, -0.0296016484, 0.0289968103, 0.0607223138]> : tensor<10xf32>
     %cst_0 = arith.constant dense_resource<__elided__> : tensor<10x256xf32>
     %cst_1 = arith.constant dense_resource<__elided__> : tensor<256xf32>
     %cst_2 = arith.constant dense_resource<__elided__> : tensor<256x128xf32>
@@ -90,7 +90,7 @@ module attributes {torch.debug_module_name = "Net"} {
     ^bb0(%in: f32, %out: f32, %out_5: i64):
       %25 = linalg.index 1 : index
       %26 = arith.index_cast %25 : index to i64
-      %27 = arith.maxf %in, %out : f32
+      %27 = arith.maximumf %in, %out : f32
       %28 = arith.cmpf ogt, %in, %out : f32
       %29 = arith.select %28, %26, %out_5 : i64
       linalg.yield %27, %29 : f32, i64
@@ -131,28 +131,28 @@ tosa
     %0 = "tosa.const"() <{value = dense_resource<__elided__> : tensor<10x256xf32>}> : () -> tensor<10x256xf32>
     %1 = "tosa.const"() <{value = dense_resource<__elided__> : tensor<256x128xf32>}> : () -> tensor<256x128xf32>
     %2 = "tosa.const"() <{value = dense<[1, 0]> : tensor<2xi32>}> : () -> tensor<2xi32>
-    %3 = "tosa.const"() <{value = dense<[[0.030073069, -0.00633022189, 3.07992101E-4, 0.0396411791, -0.0485531315, -2.76342034E-5, 0.0205513164, -0.0391363725, 0.0608757138, -5.853670e-02]]> : tensor<1x10xf32>}> : () -> tensor<1x10xf32>
+    %3 = "tosa.const"() <{value = dense<[[-0.00630987436, -0.0443928167, 0.0618280694, -0.0368138924, -0.0515485033, 0.00771782547, -0.0303224251, -0.0296016484, 0.0289968103, 0.0607223138]]> : tensor<1x10xf32>}> : () -> tensor<1x10xf32>
     %4 = "tosa.const"() <{value = dense_resource<__elided__> : tensor<1x256xf32>}> : () -> tensor<1x256xf32>
-    %5 = "tosa.transpose"(%1, %2) : (tensor<256x128xf32>, tensor<2xi32>) -> tensor<128x256xf32>
-    %6 = "tosa.reshape"(%arg0) <{new_shape = array<i64: 1, 2, 128>}> : (tensor<2x128xf32>) -> tensor<1x2x128xf32>
-    %7 = "tosa.reshape"(%5) <{new_shape = array<i64: 1, 128, 256>}> : (tensor<128x256xf32>) -> tensor<1x128x256xf32>
-    %8 = "tosa.matmul"(%6, %7) : (tensor<1x2x128xf32>, tensor<1x128x256xf32>) -> tensor<1x2x256xf32>
-    %9 = "tosa.reshape"(%8) <{new_shape = array<i64: 2, 256>}> : (tensor<1x2x256xf32>) -> tensor<2x256xf32>
-    %10 = "tosa.add"(%9, %4) : (tensor<2x256xf32>, tensor<1x256xf32>) -> tensor<2x256xf32>
-    %11 = "tosa.clamp"(%10) <{max_fp = 3.40282347E+38 : f32, max_int = 2147483647 : i64, min_fp = 0.000000e+00 : f32, min_int = 0 : i64}> : (tensor<2x256xf32>) -> tensor<2x256xf32>
-    %12 = "tosa.transpose"(%0, %2) : (tensor<10x256xf32>, tensor<2xi32>) -> tensor<256x10xf32>
-    %13 = "tosa.reshape"(%11) <{new_shape = array<i64: 1, 2, 256>}> : (tensor<2x256xf32>) -> tensor<1x2x256xf32>
-    %14 = "tosa.reshape"(%12) <{new_shape = array<i64: 1, 256, 10>}> : (tensor<256x10xf32>) -> tensor<1x256x10xf32>
-    %15 = "tosa.matmul"(%13, %14) : (tensor<1x2x256xf32>, tensor<1x256x10xf32>) -> tensor<1x2x10xf32>
-    %16 = "tosa.reshape"(%15) <{new_shape = array<i64: 2, 10>}> : (tensor<1x2x10xf32>) -> tensor<2x10xf32>
-    %17 = "tosa.add"(%16, %3) : (tensor<2x10xf32>, tensor<1x10xf32>) -> tensor<2x10xf32>
-    %18 = "tosa.clamp"(%17) <{max_fp = 3.40282347E+38 : f32, max_int = 2147483647 : i64, min_fp = 0.000000e+00 : f32, min_int = 0 : i64}> : (tensor<2x10xf32>) -> tensor<2x10xf32>
-    %19 = "tosa.reduce_max"(%18) <{axis = 1 : i64}> : (tensor<2x10xf32>) -> tensor<2x1xf32>
-    %20 = "tosa.sub"(%18, %19) : (tensor<2x10xf32>, tensor<2x1xf32>) -> tensor<2x10xf32>
-    %21 = "tosa.exp"(%20) : (tensor<2x10xf32>) -> tensor<2x10xf32>
-    %22 = "tosa.reduce_sum"(%21) <{axis = 1 : i64}> : (tensor<2x10xf32>) -> tensor<2x1xf32>
-    %23 = "tosa.log"(%22) : (tensor<2x1xf32>) -> tensor<2x1xf32>
-    %24 = "tosa.sub"(%20, %23) : (tensor<2x10xf32>, tensor<2x1xf32>) -> tensor<2x10xf32>
+    %5 = tosa.transpose %1, %2 : (tensor<256x128xf32>, tensor<2xi32>) -> tensor<128x256xf32>
+    %6 = tosa.reshape %arg0 {new_shape = array<i64: 1, 2, 128>} : (tensor<2x128xf32>) -> tensor<1x2x128xf32>
+    %7 = tosa.reshape %5 {new_shape = array<i64: 1, 128, 256>} : (tensor<128x256xf32>) -> tensor<1x128x256xf32>
+    %8 = tosa.matmul %6, %7 : (tensor<1x2x128xf32>, tensor<1x128x256xf32>) -> tensor<1x2x256xf32>
+    %9 = tosa.reshape %8 {new_shape = array<i64: 2, 256>} : (tensor<1x2x256xf32>) -> tensor<2x256xf32>
+    %10 = tosa.add %9, %4 : (tensor<2x256xf32>, tensor<1x256xf32>) -> tensor<2x256xf32>
+    %11 = tosa.clamp %10 {max_fp = 3.40282347E+38 : f32, max_int = 2147483647 : i64, min_fp = 0.000000e+00 : f32, min_int = 0 : i64} : (tensor<2x256xf32>) -> tensor<2x256xf32>
+    %12 = tosa.transpose %0, %2 : (tensor<10x256xf32>, tensor<2xi32>) -> tensor<256x10xf32>
+    %13 = tosa.reshape %11 {new_shape = array<i64: 1, 2, 256>} : (tensor<2x256xf32>) -> tensor<1x2x256xf32>
+    %14 = tosa.reshape %12 {new_shape = array<i64: 1, 256, 10>} : (tensor<256x10xf32>) -> tensor<1x256x10xf32>
+    %15 = tosa.matmul %13, %14 : (tensor<1x2x256xf32>, tensor<1x256x10xf32>) -> tensor<1x2x10xf32>
+    %16 = tosa.reshape %15 {new_shape = array<i64: 2, 10>} : (tensor<1x2x10xf32>) -> tensor<2x10xf32>
+    %17 = tosa.add %16, %3 : (tensor<2x10xf32>, tensor<1x10xf32>) -> tensor<2x10xf32>
+    %18 = tosa.clamp %17 {max_fp = 3.40282347E+38 : f32, max_int = 2147483647 : i64, min_fp = 0.000000e+00 : f32, min_int = 0 : i64} : (tensor<2x10xf32>) -> tensor<2x10xf32>
+    %19 = tosa.reduce_max %18 {axis = 1 : i32} : (tensor<2x10xf32>) -> tensor<2x1xf32>
+    %20 = tosa.sub %18, %19 : (tensor<2x10xf32>, tensor<2x1xf32>) -> tensor<2x10xf32>
+    %21 = tosa.exp %20 : (tensor<2x10xf32>) -> tensor<2x10xf32>
+    %22 = tosa.reduce_sum %21 {axis = 1 : i32} : (tensor<2x10xf32>) -> tensor<2x1xf32>
+    %23 = tosa.log %22 : (tensor<2x1xf32>) -> tensor<2x1xf32>
+    %24 = tosa.sub %20, %23 : (tensor<2x10xf32>, tensor<2x1xf32>) -> tensor<2x10xf32>
     return %24 : tensor<2x10xf32>
   }
 }
@@ -160,7 +160,7 @@ tosa
 stablehlo 
  module attributes {torch.debug_module_name = "Net"} {
   func.func @forward(%arg0: tensor<2x128xf32>) -> tensor<2x10xf32> {
-    %0 = stablehlo.constant dense<[0.030073069, -0.00633022189, 3.07992101E-4, 0.0396411791, -0.0485531315, -2.76342034E-5, 0.0205513164, -0.0391363725, 0.0608757138, -5.853670e-02]> : tensor<10xf32>
+    %0 = stablehlo.constant dense<[-0.00630987436, -0.0443928167, 0.0618280694, -0.0368138924, -0.0515485033, 0.00771782547, -0.0303224251, -0.0296016484, 0.0289968103, 0.0607223138]> : tensor<10xf32>
     %1 = stablehlo.constant dense_resource<__elided__> : tensor<10x256xf32>
     %2 = stablehlo.constant dense_resource<__elided__> : tensor<256xf32>
     %3 = stablehlo.constant dense_resource<__elided__> : tensor<256x128xf32>

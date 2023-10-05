@@ -6,7 +6,7 @@ import torch.nn.functional as F
 import torch._dynamo as dynamo
 
 import sys
-sys.path.append('../lib')
+sys.path.append('../../lib')
 from torch_mlir_compile import refbackend_torchdynamo_backend
 
 
