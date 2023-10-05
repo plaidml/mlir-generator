@@ -36,6 +36,9 @@ pip install --pre torch-mlir torchvision \
   -f https://llvm.github.io/torch-mlir/package-index/ \
   --extra-index-url https://download.pytorch.org/whl/nightly/cpu
 
+# Install any additional dependencies
+pip install transformers
+
 # Done
 echo " + Done."
 conda deactivate
