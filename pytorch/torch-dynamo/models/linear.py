@@ -32,4 +32,5 @@ def main():
     dynamo_callable(torch.ones(2, 128))
 
 if __name__ == '__main__':
-    main()
+    with torch.no_grad():
+        main()

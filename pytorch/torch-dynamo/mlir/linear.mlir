@@ -3,9 +3,9 @@ linalg-on-tensors
 #map1 = affine_map<(d0, d1) -> (d1, d0)>
 #map2 = affine_map<(d0, d1) -> (d1)>
 #map3 = affine_map<(d0, d1) -> (d0, 0)>
-module attributes {torch.debug_module_name = "GraphModule"} {
+module attributes {torch.debug_module_name = "_lambda"} {
   ml_program.global private mutable @global_seed(dense<0> : tensor<i64>) : tensor<i64>
-  func.func @forward(%arg0: tensor<256x128xf32>, %arg1: tensor<256xf32>, %arg2: tensor<10x256xf32>, %arg3: tensor<10xf32>, %arg4: tensor<2x128xf32>) -> (tensor<2x10xf32>, tensor<2x128xf32>, tensor<2x256xf32>, tensor<256x10xf32>, tensor<2x10xf32>, tensor<2x10xf32>) {
+  func.func @forward(%arg0: tensor<256x128xf32>, %arg1: tensor<256xf32>, %arg2: tensor<10x256xf32>, %arg3: tensor<10xf32>, %arg4: tensor<2x128xf32>) -> tensor<2x10xf32> {
     %c0_i64 = arith.constant 0 : i64
     %cst = arith.constant 0.000000e+00 : f32
     %cst_0 = arith.constant 0xFF800000 : f32
@@ -86,7 +86,7 @@ module attributes {torch.debug_module_name = "GraphModule"} {
       %25 = arith.subf %in, %in_1 : f32
       linalg.yield %25 : f32
     } -> tensor<2x10xf32>
-    return %24, %arg4, %6, %8, %13, %24 : tensor<2x10xf32>, tensor<2x128xf32>, tensor<2x256xf32>, tensor<256x10xf32>, tensor<2x10xf32>, tensor<2x10xf32>
+    return %24 : tensor<2x10xf32>
   }
 }
 
