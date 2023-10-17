@@ -20,10 +20,11 @@ def main():
     bert_model_name = "bert-base-uncased"
     model = BertModel.from_pretrained(bert_model_name).to(device)
     dynamo_callable = dynamo.optimize(refbackend_torchdynamo_backend)(model)
-    
+
     tokenizer = AutoTokenizer.from_pretrained(bert_model_name)
     inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
     dynamo_callable(**inputs)
 
 if __name__ == '__main__':
-    main()
+    with torch.no_grad():
+        main()

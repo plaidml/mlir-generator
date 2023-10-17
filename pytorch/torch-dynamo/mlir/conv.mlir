@@ -4,9 +4,9 @@ linalg-on-tensors
 #map2 = affine_map<(d0, d1, d2, d3) -> (0, d1, d2, d3)>
 #map3 = affine_map<(d0, d1, d2, d3) -> (d0, 0, d2, d3)>
 #map4 = affine_map<(d0, d1, d2, d3) -> (0, 0, d2, d3)>
-module attributes {torch.debug_module_name = "GraphModule"} {
+module attributes {torch.debug_module_name = "_lambda"} {
   ml_program.global private mutable @global_seed(dense<0> : tensor<i64>) : tensor<i64>
-  func.func @forward(%arg0: tensor<32x3x3x3xf32>, %arg1: tensor<32xf32>, %arg2: tensor<2x32x3x3xf32>, %arg3: tensor<2xf32>, %arg4: tensor<1x3x28x28xf32>) -> (tensor<1x2x3x3xf32>, tensor<32x3x3x3xf32>, tensor<2x32x3x3xf32>, tensor<1x3x28x28xf32>, tensor<1x32x9x9xf32>, tensor<1x2x3x3xf32>, tensor<1x2x3x3xf32>) {
+  func.func @forward(%arg0: tensor<32x3x3x3xf32>, %arg1: tensor<32xf32>, %arg2: tensor<2x32x3x3xf32>, %arg3: tensor<2xf32>, %arg4: tensor<1x3x28x28xf32>) -> tensor<1x2x3x3xf32> {
     %cst = arith.constant 0.000000e+00 : f32
     %cst_0 = arith.constant 0xFF800000 : f32
     %c0_i64 = arith.constant 0 : i64
@@ -73,7 +73,6 @@ module attributes {torch.debug_module_name = "GraphModule"} {
       %19 = arith.subf %in, %in_1 : f32
       linalg.yield %19 : f32
     } -> tensor<1x2x3x3xf32>
-    return %18, %arg0, %arg2, %arg4, %3, %7, %18 : tensor<1x2x3x3xf32>, tensor<32x3x3x3xf32>, tensor<2x32x3x3xf32>, tensor<1x3x28x28xf32>, tensor<1x32x9x9xf32>, tensor<1x2x3x3xf32>, tensor<1x2x3x3xf32>
+    return %18 : tensor<1x2x3x3xf32>
   }
 }
-
